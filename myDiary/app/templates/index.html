@@ -1,0 +1,18 @@
+<!-- extend base layout -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<table   align="center"  width="60%">
+<tr><td align="center"><b> <a href="{{url_for('write')}}">Write Diary</a> </b></td></tr>
+<div><tr><td><h1>My Diary:</h1></td></tr>
+     {% for diary_e in diary %}
+ <tr><td align="left"width="60%"><b> <a href="{{ url_for('diary_content', titlename=diary_e.titlename) }}">{{diary_e.titlename}}</a> </b></td>
+     <td align="center"width="20%"><b>{{diary_e.update_time.strftime("%Y-%m-%d")}}</b></td>
+     <td align="center"width="10%"><b> <a href="{{ url_for('edit_content', titlename=diary_e.titlename) }}">Edit</a> </b></td>
+     <td align="center" width="10%"><b> <a href="{{ url_for('delete', titlename=diary_e.titlename) }}">Delete</a> </b></td>
+ </tr>
+{% endfor %}
+ </div>
+</table>
+{% endblock %}

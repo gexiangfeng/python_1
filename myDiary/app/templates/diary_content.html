@@ -1,0 +1,15 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<a href="/index">Cancle</a>
+<table   align="center" width="60%">
+<caption>
+<font color="red"><h1>{{diary.titlename}}</h1></font>
+</caption>
+<tr><td>
+  {{diary.content}} 
+</td></tr>
+</table>
+
+{% endblock %}
